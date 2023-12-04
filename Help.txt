@@ -1,0 +1,16 @@
+AddReview.jsx: To add reviews
+Home.jsx: Home page, Add Products
+InitializeDatabase.jsx: to initialize the database
+Login.jsx: Login Page
+Products.jsx: To view all products
+Register.jsx: Register a new user
+Users.jsx: 
+
+
+Functionality.jsx: Navigate between funcitonalities of Phase 3
+
+TwoCategories.jsx: 2nd functionality
+GoodRating.jsx: 3rd functionality
+Users.jsx: 4th functionality
+NoPoorReviews.jsx: 7th functionality
+PoorReviews.jsx: 8th Functionality
