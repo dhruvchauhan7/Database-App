@@ -14,3 +14,155 @@ GoodRating.jsx: 3rd functionality
 Users.jsx: 4th functionality
 NoPoorReviews.jsx: 7th functionality
 PoorReviews.jsx: 8th Functionality
+
+
+//favourite
+// Define variables for colors
+$primary-color: #9b59b6;
+$secondary-color: #3498db;
+$button-color: #e74c3c;
+
+// Apply styles to the Favourite2 component
+.favourite2-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  .favourite-button {
+    text-decoration: none;
+    margin-bottom: 20px;
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: $primary-color;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+
+      &:hover {
+        background-color: lighten($primary-color, 10%);
+      }
+    }
+  }
+
+  label {
+    margin-bottom: 10px;
+    font-size: 16px;
+
+    select {
+      padding: 8px;
+      border: 1px solid $secondary-color;
+      border-radius: 5px;
+      font-size: 14px;
+      margin-left: 10px;
+      width: 200px;
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: $button-color;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: lighten($button-color, 10%);
+    }
+  }
+
+  p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: $primary-color;
+    font-weight: bold;
+  }
+}
+
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$button-color: #e74c3c;
+
+// Apply styles to the Favourite component
+.favourite-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  
+  .favourite-button {
+    text-decoration: none;
+    margin-bottom: 20px;
+    
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: $primary-color;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      
+      &:hover {
+        background-color: lighten($primary-color, 10%);
+      }
+    }
+  }
+  
+  label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    
+    input[type='text'] {
+      padding: 8px;
+      border: 1px solid $secondary-color;
+      border-radius: 5px;
+      font-size: 14px;
+      margin-left: 10px;
+      width: 200px;
+    }
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      margin-bottom: 10px;
+      
+      label {
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        
+        input[type='radio'] {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: $button-color;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    
+    &:hover {
+      background-color: lighten($button-color, 10%);
+    }
+  }
+}
