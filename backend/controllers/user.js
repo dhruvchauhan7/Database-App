@@ -118,3 +118,71 @@ export const twoCategories = (req, res) => {
 
 
 //-----------------------------------------------------------------------------------------
+
+
+export const getAllUsers = (req, res) => {
+
+    const q = 'SELECT u_id, username FROM user';
+
+    db.query(q, (err, data) => {
+        if (err) {
+            console.error('Error fetching usersss:', err);
+            res.status(500).json({ message: 'Internal server error' });
+        } else {
+            res.send(data);
+        }
+    });
+};
+
+
+export const favourite = (req, res) => {
+    const { u_id, fav } = req.body; // Assuming these values are sent in the request body
+
+    if (!u_id || !fav) {
+        return res.status(400).json({ message: 'Missing user IDs or favorite' });
+    }
+
+    const q = 'UPDATE user SET fav = ? WHERE u_id = ?';
+
+    db.query(q, [fav, u_id], (err, result) => {
+        if (err) {
+            console.error('Error updating favorite:', err);
+            res.status(500).json({ message: 'Internal server error' });
+        } else {
+            res.status(200).json({ message: 'Favorite updated successfully' });
+        }
+    });
+};
+
+
+export const findCommonFavourite = (req, res) => {
+    const { user1, user2 } = req.body; // Assuming user1 and user2 IDs are sent in the request body
+
+    if (!user1 || !user2) {
+        return res.status(400).json({ message: 'Missing user IDs' });
+    }
+
+    const q = `
+      SELECT u.fav AS commonFavourite
+      FROM user u
+      WHERE u.u_id = ? AND u.fav IN (
+        SELECT fav
+        FROM user
+        WHERE u_id = ?
+      )`;
+
+    db.query(q, [user1, user2], (err, result) => {
+        if (err) {
+            console.error('Error finding common favourite:', err);
+            res.status(500).json({ message: 'Internal server error' });
+        } else {
+            if (result.length === 0) {
+                res.status(404).json({ message: 'No common favourite found' });
+            } else {
+                const commonFavourite = result[0].commonFavourite;
+                res.status(200).json({ commonFavourite });
+            }
+        }
+    });
+};
+
